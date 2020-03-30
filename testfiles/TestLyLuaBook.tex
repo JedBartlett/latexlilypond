@@ -1,0 +1,30 @@
+\documentclass[10pt]{report}
+\usepackage{lyluatex}
+
+\begin{document}
+\chapter{Normal \LaTeX}
+\section{Some Basic Stuff}
+Hello world!
+$Hello world!$ %math mode
+
+\chapter{lyLuaLateX}
+\section{In-line music}
+\begin{lilypond}
+    music = \relative {
+      c d e
+    }
+    \score {
+      \new ChoirStaff \with {
+        instrumentName = "2 Fl."
+      } <<
+      \new Staff \transpose c c' \music
+      \new Staff {
+        \clef bass
+         \music
+      }
+      >>
+    }
+  \end{lilypond}
+  \section{Referenced External Music}
+  \lilypondfile{TestMusic.ly}
+\end{document}
