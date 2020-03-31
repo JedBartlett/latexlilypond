@@ -3,6 +3,7 @@
         "devcontainer",
         "latexmk",
         "pdflatex",
+        "testfiles",
         "tlmgr"
     ]
 }
