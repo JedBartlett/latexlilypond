@@ -1,0 +1,39 @@
+# This is a basic workflow to help you get started with Actions
+
+name: CI
+
+# Controls when the action will run. Triggers the workflow on push or pull request
+# events but only for the master branch
+on:
+  push:
+    branches: ['build/**']
+  pull_request:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  build-books:
+    name: build-And-Test
+    runs-on: ubuntu-latest
+    steps:
+    - name: checkout
+      uses: actions/checkout@v2
+    - name: Show checkout worked
+      run: ls -al .
+    - name: Build Dockerfile and run smoke tests
+      run: |
+        ./build-test.sh
+    - name: Upload PDF of Book
+      uses: actions/upload-artifact@v1
+      with: 
+        name: TestLyLuaBook.pdf
+        path: ./testfiles/TestLyLuaBook.pdf
+    - name: Upload PDF of music score
+      uses: actions/upload-artifact@v1
+      with: 
+        name: TestScore.pdf
+        path: ./testfiles/TestScore.pdf
+    - name: Upload MP3 of transformed midi output
+      uses: actions/upload-artifact@v1
+      with: 
+        name: TestScore.mp3
+        path: ./testfiles/TestScore.mp3
