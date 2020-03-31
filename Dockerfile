@@ -48,8 +48,7 @@ RUN apt-get update \
 # specific server, for example http://ctan.crest.fr
 #
 # # docker build \
-#     --build-arg TEXLIVE_MIRROR=http://ctan.crest.fr/tex-archive/systems/texlive/tlnet \
-#     -f Dockerfile-base -t sharelatex/sharelatex-base .
+#     --build-arg TEXLIVE_MIRROR=http://ctan.crest.fr/tex-archive/systems/texlive/tlnet
 ARG TEXLIVE_MIRROR=http://mirror.ctan.org/systems/texlive/tlnet
 
 ENV PATH "${PATH}:/usr/local/texlive/2019/bin/x86_64-linux"

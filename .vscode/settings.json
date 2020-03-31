@@ -1,9 +1,32 @@
 {
     "cSpell.words": [
+        "CICD",
+        "CTAN",
+        "Dockerhub",
+        "UIDs",
+        "autoremove",
         "devcontainer",
+        "embeding",
+        "enumitem",
+        "fancyhdr",
+        "graphicsx",
+        "jedibart",
+        "jperon",
+        "latexlilypond",
         "latexmk",
+        "lilypond",
+        "multicol",
+        "needspace",
+        "noninteractive",
         "pdflatex",
+        "sharelatex",
+        "spellright",
+        "supervisord",
         "testfiles",
-        "tlmgr"
+        "texlive",
+        "tikz",
+        "tlmgr",
+        "tsunaminoai",
+        "usepackage"
     ]
 }
