@@ -1,8 +1,8 @@
 # This file started life as:
 # https://github.com/microsoft/vscode-dev-containers/blob/v0.101.1/containers/ubuntu-18.04-git/.devcontainer/Dockerfile
 # as the basic Ubuntu+git VSCode remote container.
-FROM ubuntu:18.04
-LABEL force-rebuild="2020/02/29"
+FROM ubuntu:20.04
+LABEL force-rebuild="2020/07/26"
 # Avoid warnings by switching to noninteractive
 ENV DEBIAN_FRONTEND=noninteractive
 
@@ -51,7 +51,7 @@ RUN apt-get update \
 #     --build-arg TEXLIVE_MIRROR=http://ctan.crest.fr/tex-archive/systems/texlive/tlnet
 ARG TEXLIVE_MIRROR=http://mirror.ctan.org/systems/texlive/tlnet
 
-ENV PATH "${PATH}:/usr/local/texlive/2019/bin/x86_64-linux"
+ENV PATH "${PATH}:/usr/local/texlive/2020/bin/x86_64-linux"
 
 RUN mkdir /install-tl-unx \
 &&  curl -sSL \
@@ -75,7 +75,7 @@ RUN apt-get autoremove -y \
 # Install lilypond manually
 # Manually wget the binaries for lilypond and install them
 RUN wget \
-    http://lilypond.org/download/binaries/linux-64/lilypond-2.18.2-1.linux-64.sh; \
+    http://lilypond.org/download/binaries/linux-64/lilypond-2.21.3-1.linux-64.sh; \
     sh ./lilypond*.sh --batch ; \
     rm ./lilypond*.sh
 
